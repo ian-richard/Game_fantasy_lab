@@ -1,7 +1,11 @@
 package player;
+import Room.Room;
+
 import java.util.ArrayList;
 
-public abstract class Player {
+import static java.lang.Boolean.TRUE;
+
+public abstract class Player  implements IAttack {
 
     private String name;
     private Integer healthPoints;
@@ -28,4 +32,8 @@ public abstract class Player {
     public Integer getRoomCount(){ return this.roomList.size();}
 
     public void addRoom(Room room){this.roomList.add(room);}
-}
+
+    public boolean canAttackRoom(Player player, Room room){
+        return (player.healthPoints > room.getHealthPointsReq());}
+
+}}

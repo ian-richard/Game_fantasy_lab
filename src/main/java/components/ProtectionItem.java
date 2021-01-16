@@ -1,26 +1,9 @@
 package components;
 
-public class ProtectionItem {
+public class ProtectionItem extends ProtectionObject{
 
-    String name;
-    Integer item;
-    Integer damage;
-
-    public ProtectionItem(String name, Integer item, Integer damage){
-        this.name = name;
-        this.item = item;
-        this.damage = damage;
+    public ProtectionItem(String name, Integer damage){
+        super(name, damage);
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public Integer getItem() {
-        return item;
-    }
-
-    public Integer getDamage() {
-        return damage;
-    }
 }

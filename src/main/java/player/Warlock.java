@@ -1,26 +1,17 @@
 package player;
 
-import components.ProtectionCreature;
-import components.ProtectionItem;
-import components.Spell;
-import components.Weapon;
+import components.DamageObject;
+
+import components.ProtectionObject;
+
 
 public class Warlock extends Player {
 
-    Spell spell;
-    ProtectionCreature protectionCreature;
-
-    public Warlock(String name, Integer healthPoints, Spell spell,
-                   ProtectionCreature protectionCreature){
-        super(name, healthPoints);
-        this.spell = spell;
-        this.protectionCreature = protectionCreature;
+    public Warlock(String name, Integer healthPoints, DamageObject damageObject,
+                     ProtectionObject protectionObject){
+        super(name, healthPoints, damageObject, protectionObject);
 
     }
-
-    public Spell getSpell(){ return spell;}
-
-    public ProtectionCreature getProtectionCreature(){ return protectionCreature;}
 
 
 }

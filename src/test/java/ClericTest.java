@@ -1,26 +1,34 @@
-import components.DamageObject;
-
-import components.ProtectionObject;
-import components.Weapon;
+import components.*;
 import org.junit.Before;
 import org.junit.Test;
-import player.Barbarian;
+import player.Cleric;
+
 
 
 import static org.junit.Assert.*;
 
-public class BarbarianTest {
+public class ClericTest {
 
-    Barbarian character;
+    Cleric character;
     DamageObject damageObject;
     ProtectionObject protectionObject;
+    HealItem healItem;
 
     @Before
     public void before(){
-        damageObject = new Weapon("Sword", 40);
-        character = new Barbarian("Barbarian", 100, damageObject, protectionObject);
+        damageObject = new Spell("Psychic Scream", 40);
+        protectionObject = new ProtectionCreature("Ogre", 40);
+        healItem = new HealItem("Potion", 50 );
+        character = new Cleric("Cleric", 100, damageObject,
+                protectionObject, healItem);
 
     }
+
+    @Test
+    public void hasHealItem(){assertEquals(healItem, character.getHealItem());}
+
+    @Test
+    public void hasHealItemValue(){assertEquals(50, (long)character.getHealItem());}
 
     @Test
     public void hasDamageObject(){assertEquals(damageObject, character.getDamageObject());}

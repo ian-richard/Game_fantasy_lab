@@ -1,24 +1,22 @@
-import components.DamageObject;
-
-import components.ProtectionObject;
-import components.Weapon;
+import components.*;
 import org.junit.Before;
 import org.junit.Test;
-import player.Barbarian;
+import player.Wizard;
 
 
 import static org.junit.Assert.*;
 
-public class BarbarianTest {
+public class WizardTest {
 
-    Barbarian character;
+    Wizard character;
     DamageObject damageObject;
     ProtectionObject protectionObject;
 
     @Before
     public void before(){
-        damageObject = new Weapon("Sword", 40);
-        character = new Barbarian("Barbarian", 100, damageObject, protectionObject);
+        damageObject = new Spell("Psychic Scream", 40);
+        protectionObject = new ProtectionCreature("Tarrasque", 40);
+        character = new Wizard("Wizard", 100, damageObject, protectionObject );
 
     }
 

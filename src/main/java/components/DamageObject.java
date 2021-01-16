@@ -1,7 +1,7 @@
 package components;
 
 public abstract class DamageObject {
-    private String name;
+    String name;
     Integer damage;
 
     public DamageObject(String name, Integer damage){

@@ -1,22 +1,23 @@
 package player;
 
+import components.DamageObject;
 import components.HealItem;
-import components.ProtectionCreature;
-import components.Spell;
+import components.ProtectionObject;
+
 
 public class Cleric extends Player {
 
     HealItem healItem;
 
+    public Cleric(String name, Integer healthPoints, DamageObject damageObject,
+                  ProtectionObject protectionObject, HealItem healItem){
 
-    public Cleric(String name, Integer healthPoints, HealItem healItem){
-        super(name, healthPoints);
+        super(name, healthPoints, damageObject, protectionObject);
         this.healItem = healItem;
 
     }
 
-    public HealItem getHealItem(){ return healItem;}
-
+    public Integer getHealItem(){ return this.healItem.getHealValue();}
 
 
 }

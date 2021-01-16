@@ -1,24 +1,32 @@
 package player;
 
+import components.DamageObject;
 import components.ProtectionItem;
 import components.Weapon;
 
 public class Barbarian extends Player {
 
-    Weapon weapon;
-    ProtectionItem protectionItem;
 
-    public Barbarian(String name, Integer healthPoints, Weapon weapon,
+    DamageObject damageObject;
+    ProtectionItem protectionObject;
+
+    public Barbarian(String name, Integer healthPoints, DamageObject damageObject,
                  ProtectionItem protectionItem){
         super(name, healthPoints);
-        this.weapon = weapon;
-        this.protectionItem = protectionItem;
+        this.damageObject = damageObject;
+        this.protectionObject = protectionItem;
 
     }
 
-    public Weapon getWeapon(){ return weapon;}
+    public DamageObject getDamageObject(){ return damageObject;}
 
-    public ProtectionItem getProtectionItem(){ return protectionItem;}
+    public int getDamageObjectValue(){ return this.damageObject.getDamageValue();}
+
+    public ProtectionItem protectionObject(){ return protectionObject;}
+
+
+
+
 
 
 }

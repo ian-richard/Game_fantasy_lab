@@ -5,9 +5,9 @@ import player.Knight;
 import player.Warlock;
 import player.Wizard;
 import player.Player;
-
-public interface IAttack {
-    public boolean canAttack(Player player);}
-
+//
+//public interface IAttack {
+//    public boolean iWinFight(Player player);}
+//
 
 

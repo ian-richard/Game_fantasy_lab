@@ -3,13 +3,13 @@ import Room.Room;
 
 import java.util.ArrayList;
 
-import static java.lang.Boolean.TRUE;
 
-public abstract class Player  implements IAttack {
+public abstract class Player {
 
     private String name;
     private Integer healthPoints;
     private ArrayList<Room> roomList;
+
 
     public Player(String name, Integer healthPoints){
         this.name = name;
@@ -25,6 +25,19 @@ public abstract class Player  implements IAttack {
         return healthPoints;
     }
 
+    public void setHealthPoints(int num){
+        this.healthPoints = num;
+    }
+
+
+
+
+
+
+
+
+
+
     public void setHealthPoints(Integer healthPoints) {
         this.healthPoints = healthPoints;
     }
@@ -36,4 +49,4 @@ public abstract class Player  implements IAttack {
     public boolean canAttackRoom(Player player, Room room){
         return (player.healthPoints > room.getHealthPointsReq());}
 
-}}
+}

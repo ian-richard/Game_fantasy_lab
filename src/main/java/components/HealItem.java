@@ -3,7 +3,7 @@ package components;
 public class HealItem {
 
     String name;
-    Integer healValue;
+    int healValue;
 
     public HealItem(String name, Integer healValue){
         this.name = name;
@@ -14,7 +14,7 @@ public class HealItem {
         return name;
     }
 
-    public Integer getHealValue() {
+    public int getHealValue() {
         return healValue;
     }
 }

@@ -17,7 +17,8 @@ public class Cleric extends Player {
 
     }
 
-    public Integer getHealItem(){ return this.healItem.getHealValue();}
+    public HealItem getHealItem(){ return healItem;}
+    public int getHealItemValue(){ return this.healItem.getHealValue();}
 
 
 }

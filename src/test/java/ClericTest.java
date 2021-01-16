@@ -28,7 +28,7 @@ public class ClericTest {
     public void hasHealItem(){assertEquals(healItem, character.getHealItem());}
 
     @Test
-    public void hasHealItemValue(){assertEquals(50, (long)character.getHealItem());}
+    public void hasHealItemValue(){assertEquals(50, character.getHealItemValue());}
 
     @Test
     public void hasDamageObject(){assertEquals(damageObject, character.getDamageObject());}

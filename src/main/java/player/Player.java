@@ -1,18 +1,20 @@
 package player;
-import Room.Room;
+import Kingdom.Kingdom;
 import components.DamageObject;
 import components.ProtectionObject;
 
 import java.util.ArrayList;
 
+import static java.lang.Boolean.TRUE;
 
-public abstract class Player {
+
+public abstract class Player implements IAttack {
 
     private String name;
     private Integer healthPoints;
     DamageObject damageObject;
     ProtectionObject protectionObject;
-    private ArrayList<Room> roomList;
+    private ArrayList<Kingdom> kingdomList;
 
 
     public Player(String name, Integer healthPoints, DamageObject damageObject,
@@ -21,7 +23,7 @@ public abstract class Player {
         this.healthPoints = healthPoints;
         this.damageObject = damageObject;
         this.protectionObject = protectionObject;
-        this.roomList = new ArrayList<Room>();
+        this.kingdomList = new ArrayList<Kingdom>();
     }
 
     public String getName() {
@@ -46,11 +48,12 @@ public abstract class Player {
         this.healthPoints = healthPoints;
     }
 
-    public Integer getRoomCount(){ return this.roomList.size();}
+    public Integer getRoomCount(){ return this.kingdomList.size();}
 
-    public void addRoom(Room room){this.roomList.add(room);}
+    public void addRoom(Kingdom kingdom){this.kingdomList.add(kingdom);}
 
-    public boolean canAttackRoom(Player player, Room room){
-        return (player.healthPoints > room.getHealthPointsReq());}
+    public boolean canTakeKingdom(Kingdom kingdom){
+        return TRUE;
+    }
 
 }

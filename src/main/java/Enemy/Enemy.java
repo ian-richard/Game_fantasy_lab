@@ -5,7 +5,7 @@ import components.ProtectionObject;
 import player.Player;
 
 public class Enemy extends Player {
-    public Enemy(String name, Integer healthPoints, DamageObject damageObject,
+    public Enemy(String name, int healthPoints, DamageObject damageObject,
                  ProtectionObject protectionObject){
         super(name, healthPoints, damageObject, protectionObject);
 }}

@@ -11,13 +11,13 @@ import static java.lang.Boolean.TRUE;
 public abstract class Player implements IAttack {
 
     private String name;
-    private Integer healthPoints;
+    private int healthPoints;
     DamageObject damageObject;
     ProtectionObject protectionObject;
     private ArrayList<Kingdom> kingdomList;
 
 
-    public Player(String name, Integer healthPoints, DamageObject damageObject,
+    public Player(String name, int healthPoints, DamageObject damageObject,
                   ProtectionObject protectionObject){
         this.name = name;
         this.healthPoints = healthPoints;
@@ -30,7 +30,7 @@ public abstract class Player implements IAttack {
         return name;
     }
 
-    public Integer getHealthPoints() {
+    public int getHealthPoints() {
         return healthPoints;
     }
 
@@ -48,12 +48,14 @@ public abstract class Player implements IAttack {
         this.healthPoints = healthPoints;
     }
 
-    public Integer getRoomCount(){ return this.kingdomList.size();}
+    public int getRoomCount(){ return this.kingdomList.size();}
 
     public void addRoom(Kingdom kingdom){this.kingdomList.add(kingdom);}
 
-    public boolean canTakeKingdom(Kingdom kingdom){
-        return TRUE;
+    public void canTakeKingdom(Kingdom kingdom){
+        if(this.healthPoints > kingdom.enemy.getHealthPoints()){
+        this.kingdomList.add(kingdom);}
+
     }
 
 }

@@ -1,11 +1,13 @@
 package Kingdom;
 
 import Enemy.Enemy;
+import player.Player;
 
 public class Kingdom {
+    public Enemy enemy;
     String name;
     int difficulty;
-    Enemy enemy;
+
 
 
     public Kingdom(String name, int difficulty, Enemy enemy){

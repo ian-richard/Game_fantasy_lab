@@ -114,7 +114,7 @@ public class BarbarianTest {
         character.populateNextKingdomList(kingdomLevel2);
         character.setFirstLevel();
         character.canTakeKingdom(kingdomLevel1);
-        character.progressToNextLevel();
+//        character.progressToNextLevel();
         assertEquals(kingdomLevel1, character.getNextLevel());
     }
 }

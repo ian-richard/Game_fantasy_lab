@@ -4,6 +4,7 @@ import components.DamageObject;
 import components.ProtectionObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public abstract class Player {
@@ -18,7 +19,7 @@ public abstract class Player {
 
 
     public Player(String name, int healthPoints, DamageObject damageObject,
-                  ProtectionObject protectionObject){
+                  ProtectionObject protectionObject) {
         this.name = name;
         this.healthPoints = healthPoints;
         this.damageObject = damageObject;
@@ -36,54 +37,73 @@ public abstract class Player {
         return healthPoints;
     }
 
-    public void setHealthPoints(int num){
+    public void setHealthPoints(int num) {
         this.healthPoints = num;
     }
 
-    public DamageObject getDamageObject(){ return damageObject;}
+    public DamageObject getDamageObject() {
+        return damageObject;
+    }
 
-    public int getDamageObjectValue(){ return this.damageObject.getDamageValue();}
+    public int getDamageObjectValue() {
+        return this.damageObject.getDamageValue();
+    }
 
-    public ProtectionObject protectionObject(){ return protectionObject;}
+    public ProtectionObject protectionObject() {
+        return protectionObject;
+    }
 
     public void setHealthPoints(Integer healthPoints) {
         this.healthPoints = healthPoints;
     }
 
-    public int getRoomCount(){ return this.kingdomList.size();}
+    public int getRoomCount() {
+        return this.kingdomList.size();
+    }
 
-    public void addRoom(Kingdom kingdom){this.kingdomList.add(kingdom);}
+    public void addRoom(Kingdom kingdom) {
+        this.kingdomList.add(kingdom);
+    }
 
 //    public void canTakeKingdom(Kingdom kingdom){
 //        if(this.healthPoints > kingdom.enemy.getHealthPoints()){
 //        this.kingdomList.add(kingdom);}
 
-    public boolean canTakeKingdom(Kingdom kingdom){
-        return this.healthPoints > kingdom.enemy.getHealthPoints(); }
+    public boolean canTakeKingdom(Kingdom kingdom) {
+        return this.healthPoints > kingdom.enemy.getHealthPoints();
+    }
 
-    public boolean canTakeKingdomHealthAndWeaponTest(Kingdom kingdom){
+    public boolean canTakeKingdomHealthAndWeaponTest(Kingdom kingdom) {
         return this.healthPoints > kingdom.enemy.getHealthPoints() &&
-                this.damageObject.getDamageValue() > kingdom.enemy.getDamageObjectValue(); }
+                this.damageObject.getDamageValue() > kingdom.enemy.getDamageObjectValue();
+    }
 
-    public void takeKingdom(Kingdom kingdom){
-        if (canTakeKingdomHealthAndWeaponTest(kingdom));{
-            addRoom(kingdom); } }
+    public void takeKingdom(Kingdom kingdom) {
+        if (canTakeKingdomHealthAndWeaponTest(kingdom)) ;
+        {
+            addRoom(kingdom);
+        }
+    }
 
-    public int sizeNextKingdomList(){
+    public int sizeNextKingdomList() {
         return nextKingdomList.size();
     }
 
-    public void populateNextKingdomList(Kingdom kingdom){
+    public void populateNextKingdomList(Kingdom kingdom) {
         this.nextKingdomList.add(kingdom);
     }
 
-    public Object getNextLevel(){
+    public Object getNextLevel() {
         return this.nextLevel;
     }
 
-    public void setFirstLevel(){
+    public void setFirstLevel() {
         this.nextLevel = nextKingdomList.get(0);
     }
+
+//    public static void searchlist (List<Kingdom> users, )
+
+}
 
 //    public void progressToNextLevel(){
 //        this.nextLevel = nextKingdomList.iterator().next();
@@ -95,7 +115,4 @@ public abstract class Player {
 //        }
 //    }
 
-//    public static<T> int find(T[] a, T target){
-//
-//
-//    }
+

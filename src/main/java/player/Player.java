@@ -77,11 +77,25 @@ public abstract class Player {
         this.nextKingdomList.add(kingdom);
     }
 
-    public void setNextLevel(){
-        this.nextLevel = nextKingdomList.get(0);
-    }
-
     public Object getNextLevel(){
         return this.nextLevel;
     }
-}
+
+    public void setFirstLevel(){
+        this.nextLevel = nextKingdomList.get(0);
+    }
+
+//    public void progressToNextLevel(){
+//        this.nextLevel = nextKingdomList.iterator().next();
+//    }
+
+//    public void progressToNextLevel(){
+//        for (int i = 0; i < kingdomList.size(); i++ ){
+//            this.nextLevel = nextKingdomList.get(i);
+//        }
+//    }
+
+//    public static<T> int find(T[] a, T target){
+//
+//
+//    }

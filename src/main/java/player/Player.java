@@ -13,6 +13,8 @@ public abstract class Player {
     DamageObject damageObject;
     ProtectionObject protectionObject;
     private ArrayList<Kingdom> kingdomList;
+    private ArrayList<Kingdom> nextKingdomList;
+    private Object nextLevel;
 
 
     public Player(String name, int healthPoints, DamageObject damageObject,
@@ -22,6 +24,8 @@ public abstract class Player {
         this.damageObject = damageObject;
         this.protectionObject = protectionObject;
         this.kingdomList = new ArrayList<Kingdom>();
+        this.nextKingdomList = new ArrayList<Kingdom>();
+        this.nextLevel = null;
     }
 
     public String getName() {
@@ -63,7 +67,21 @@ public abstract class Player {
 
     public void takeKingdom(Kingdom kingdom){
         if (canTakeKingdomHealthAndWeaponTest(kingdom));{
-            addRoom(kingdom);
-        }
+            addRoom(kingdom); } }
+
+    public int sizeNextKingdomList(){
+        return nextKingdomList.size();
+    }
+
+    public void populateNextKingdomList(Kingdom kingdom){
+        this.nextKingdomList.add(kingdom);
+    }
+
+    public void setNextLevel(){
+        this.nextLevel = nextKingdomList.get(0);
+    }
+
+    public Object getNextLevel(){
+        return this.nextLevel;
     }
 }

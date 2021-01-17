@@ -20,6 +20,8 @@ public class BarbarianTest {
     ProtectionObject protectionObject;
     ProtectionObject protectionObject2;
     Kingdom kingdomLevel1;
+    Kingdom kingdomLevel2;
+    Kingdom kingdomLevel3;
     Enemy enemy1;
 
     @Before
@@ -31,6 +33,8 @@ public class BarbarianTest {
         character = new Barbarian("Barbarian", 100, damageObject, protectionObject);
         enemy1 = new Enemy("Pirate", 40, damageObject2, protectionObject2);
         kingdomLevel1 = new Kingdom("The North", 1, enemy1);
+        kingdomLevel2 = new Kingdom("The North", 2, enemy1);
+        kingdomLevel3 = new Kingdom("The North", 3, enemy1);
 
     }
 
@@ -69,9 +73,32 @@ public class BarbarianTest {
 
     @Test
     public void hasWarCry(){
-            assertEquals("I don't need fireballs when I'm rocking these guns", character.warCry());
+            assertEquals("I don't need fireballs " +
+                    "when I'm rocking these guns", character.warCry());
         }
+
+
+    @Test
+    public void nextKingdomListStartsAtZero(){
+    assertEquals(0, character.sizeNextKingdomList());
     }
+
+    @Test
+    public void populateNextKingdomList(){
+        character.populateNextKingdomList(kingdomLevel1);
+        character.populateNextKingdomList(kingdomLevel2);
+        character.populateNextKingdomList(kingdomLevel3);
+        assertEquals(3, character.sizeNextKingdomList());
+    }
+
+    @Test
+    public void hasNextLevel(){
+        character.populateNextKingdomList(kingdomLevel1);
+        character.populateNextKingdomList(kingdomLevel2);
+        character.setNextLevel();
+        assertEquals(kingdomLevel1, character.getNextLevel());
+    }
+}
 
     //    @Test
 //    public void hasHealthObject(){

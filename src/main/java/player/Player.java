@@ -5,10 +5,8 @@ import components.ProtectionObject;
 
 import java.util.ArrayList;
 
-import static java.lang.Boolean.TRUE;
 
-
-public abstract class Player implements IAttack {
+public abstract class Player {
 
     private String name;
     private int healthPoints;
@@ -52,10 +50,20 @@ public abstract class Player implements IAttack {
 
     public void addRoom(Kingdom kingdom){this.kingdomList.add(kingdom);}
 
-    public void canTakeKingdom(Kingdom kingdom){
-        if(this.healthPoints > kingdom.enemy.getHealthPoints()){
-        this.kingdomList.add(kingdom);}
+//    public void canTakeKingdom(Kingdom kingdom){
+//        if(this.healthPoints > kingdom.enemy.getHealthPoints()){
+//        this.kingdomList.add(kingdom);}
 
+    public boolean canTakeKingdom(Kingdom kingdom){
+        return this.healthPoints > kingdom.enemy.getHealthPoints(); }
+
+    public boolean canTakeKingdomHealthAndWeaponTest(Kingdom kingdom){
+        return this.healthPoints > kingdom.enemy.getHealthPoints() &&
+                this.damageObject.getDamageValue() > kingdom.enemy.getDamageObjectValue(); }
+
+    public void takeKingdom(Kingdom kingdom){
+        if (canTakeKingdomHealthAndWeaponTest(kingdom));{
+            addRoom(kingdom);
+        }
     }
-
 }

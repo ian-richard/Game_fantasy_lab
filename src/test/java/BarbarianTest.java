@@ -29,8 +29,9 @@ public class BarbarianTest {
         protectionObject = new ProtectionItem("Shield", 20);
         protectionObject2 = new ProtectionItem("Tortoise shell", 10);
         character = new Barbarian("Barbarian", 100, damageObject, protectionObject);
-        kingdomLevel1 = new Kingdom("The North", 1, enemy1);
         enemy1 = new Enemy("Pirate", 40, damageObject2, protectionObject2);
+        kingdomLevel1 = new Kingdom("The North", 1, enemy1);
+
     }
 
     @Test
@@ -52,8 +53,24 @@ public class BarbarianTest {
 
     @Test
     public void canTakeKingdom(){
-        character.canTakeKingdom(kingdomLevel1);
+        assertTrue(character.canTakeKingdom(kingdomLevel1));
+    }
+
+    @Test
+    public void canTakeKingdomHealthAndDamageTest(){
+        assertTrue(character.canTakeKingdomHealthAndWeaponTest(kingdomLevel1));
+    }
+
+    @Test
+    public void TakeKingdom(){
+        character.takeKingdom(kingdomLevel1);
         assertEquals(1, character.getRoomCount());
+    }
+
+    @Test
+    public void hasWarCry(){
+            assertEquals("I don't need fireballs when I'm rocking these guns", character.warCry());
+        }
     }
 
     //    @Test
@@ -64,4 +81,4 @@ public class BarbarianTest {
 //    @Test
 //    public void hasHealthObjectLongTest(){
 //        assertEquals(100, (long)character.getHealthPoints());}
-}
+

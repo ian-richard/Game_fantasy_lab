@@ -1,6 +1,7 @@
 import components.*;
 import org.junit.Before;
 import org.junit.Test;
+import player.IWarCry;
 import player.Warlock;
 import player.Wizard;
 
@@ -41,4 +42,11 @@ public class WarlockTest {
         character.setHealthPoints(80);
         assertEquals(80, (long)character.getHealthPoints());
     }
+
+    @Test
+    public void hasWarCry(){
+        assertEquals("That's crossing the line", character.warCry());
+    }
+
+
 }

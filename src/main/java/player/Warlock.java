@@ -5,7 +5,7 @@ import components.DamageObject;
 import components.ProtectionObject;
 
 
-public class Warlock extends Player {
+public class Warlock extends Player implements IWarCry {
 
     public Warlock(String name, Integer healthPoints, DamageObject damageObject,
                      ProtectionObject protectionObject){
@@ -13,5 +13,6 @@ public class Warlock extends Player {
 
     }
 
-
+    public String warCry(){
+        return "That's crossing the line";}
 }

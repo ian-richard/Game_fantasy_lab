@@ -65,10 +65,6 @@ public abstract class Player {
         this.kingdomList.add(kingdom);
     }
 
-//    public void canTakeKingdom(Kingdom kingdom){
-//        if(this.healthPoints > kingdom.enemy.getHealthPoints()){
-//        this.kingdomList.add(kingdom);}
-
     public boolean canTakeKingdom(Kingdom kingdom) {
         return this.healthPoints > kingdom.enemy.getHealthPoints();
     }
@@ -93,8 +89,8 @@ public abstract class Player {
         this.nextKingdomList.add(kingdom);
     }
 
-    public Object getNextLevel() {
-        return this.nextLevel;
+    public Kingdom getNextLevel() {
+        return (Kingdom)this.nextLevel;
     }
 
     public void setNextLevel() {
@@ -102,7 +98,7 @@ public abstract class Player {
     }
 }
 
-//    public static void searchlist (List<Kingdom> users, )
+
 //
 //}
 //

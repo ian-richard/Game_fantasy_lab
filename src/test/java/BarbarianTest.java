@@ -115,6 +115,15 @@ public class BarbarianTest {
         character.setNextLevel();
         assertEquals(kingdomLevel1, character.getNextLevel());
     }
+
+    @Test
+    public void startGame(){
+        character.populateNextKingdomList(kingdomLevel1);
+        character.populateNextKingdomList(kingdomLevel2);
+        character.setNextLevel();
+        character.takeKingdom(character.getNextLevel());
+        assertEquals(1, character.getRoomCount());
+    }
 }
 
     //    @Test

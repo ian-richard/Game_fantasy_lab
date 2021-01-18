@@ -97,14 +97,15 @@ public abstract class Player {
         return this.nextLevel;
     }
 
-    public void setFirstLevel() {
-        this.nextLevel = nextKingdomList.get(0);
+    public void setNextLevel() {
+        this.nextLevel = nextKingdomList.remove(0);
     }
-
-//    public static void searchlist (List<Kingdom> users, )
-
 }
 
+//    public static void searchlist (List<Kingdom> users, )
+//
+//}
+//
 //    public void progressToNextLevel(){
 //        this.nextLevel = nextKingdomList.iterator().next();
 //    }
@@ -113,6 +114,6 @@ public abstract class Player {
 //        for (int i = 0; i < kingdomList.size(); i++ ){
 //            this.nextLevel = nextKingdomList.get(i);
 //        }
-//    }
+//    }}
 
 

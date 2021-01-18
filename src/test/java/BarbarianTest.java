@@ -95,7 +95,7 @@ public class BarbarianTest {
     public void hasNextLevel(){
         character.populateNextKingdomList(kingdomLevel1);
         character.populateNextKingdomList(kingdomLevel2);
-        character.setFirstLevel();
+        character.setNextLevel();
         assertEquals(kingdomLevel1, character.getNextLevel());
     }
 
@@ -112,9 +112,7 @@ public class BarbarianTest {
     public void canProgressToNextLevel(){
         character.populateNextKingdomList(kingdomLevel1);
         character.populateNextKingdomList(kingdomLevel2);
-        character.setFirstLevel();
-        character.canTakeKingdom(kingdomLevel1);
-//        character.progressToNextLevel();
+        character.setNextLevel();
         assertEquals(kingdomLevel1, character.getNextLevel());
     }
 }
